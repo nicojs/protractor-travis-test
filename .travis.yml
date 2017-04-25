@@ -1,12 +1,10 @@
 language: node_js
 node_js:
   - "node"
-before_install: 
-  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
 install: npm install
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- ./node_modules/protractor/bin/install_selenium_standalone
-- java -jar selenium/selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=./selenium/chromedriver &
+- sh -e ./node_modules/.bin/webdriver-manager update
+- sh -e ./node_modules/.bin/webdriver-manager start &
 - sleep 3
