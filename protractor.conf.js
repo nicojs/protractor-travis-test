@@ -45,13 +45,11 @@ var config = {
 };
 
 if (process.env.TRAVIS) {
-  // const webdriverPromise = spawnWebdriverManager();
-
   config.capabilities = {
     browserName: 'firefox'
   };
-  // config.seleniumAddress = 'http://localhost:4444/wd/hub';
-  // config.directConnect = false;
+  config.seleniumAddress = 'http://localhost:4444/wd/hub';
+  config.directConnect = false;
 }
 
 exports.config = config;
