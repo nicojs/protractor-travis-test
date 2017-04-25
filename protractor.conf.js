@@ -52,9 +52,6 @@ if (process.env.TRAVIS) {
   // };
   config.seleniumAddress = 'http://localhost:4444/wd/hub';
   config.directConnect = false;
-  config.beforeLaunch = function () {
-    return webdriverPromise;
-  }
 }
 
 exports.config = config;
