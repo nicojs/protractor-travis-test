@@ -1,8 +1,13 @@
 language: node_js
 node_js:
   - "node"
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
 install: npm install
 before_script:
+- java -version
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - ./node_modules/.bin/webdriver-manager update
